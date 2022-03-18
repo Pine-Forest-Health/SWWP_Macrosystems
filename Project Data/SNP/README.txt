@@ -22,12 +22,7 @@ This process retained 49859 SNPs that is provided in this directory.
 ****File details********
 #########################
 
-Filter3_70perc_003.recode.recode.vcf
-This is the vcf file for the 49K SNPs across all the individuals.
-Individual names contain the string "trim" in front of them. For instance, ATH_4 is called trimATH_4 and mergeATH_1 is called trimmergeATH_1. 
-
 minor012.txt
-
 This file contains SNP data (coded 012) along with population, individual tree ID, mean lat-long for each population and the group the individual was classified into. 
 Groups are: LP, MX, US, 113, 114 & unk. Unknown includes LPI (which may actually be LSI).
 Some of the NAU samples will contain "merge" in front of them. That just means that for a specific individual I merged multiple fasta files prior to SNP calling because we had duplicates.
@@ -35,13 +30,5 @@ Some samples will contain "unk", this usually happens with trees for which there
 
 FIA samples were recoded because the names were too long to input into dDocent. 
 The corresponding original IDs for these samples is in FIA_sampleInfo.xlxs
- 
-PCA_49k
-This is just showing seperation of the two species along PC axes 2, with 113 largely grouping with PF and 114 being embeded within US and MX pops for PS.
-
-genolike.beagle_filter3.tar.gz
-This file contains genotype likelihood info for all samples. This info is also present in the vcf file above, but the vcf file contains a bunch of other info too. 
-
-
 
 	
