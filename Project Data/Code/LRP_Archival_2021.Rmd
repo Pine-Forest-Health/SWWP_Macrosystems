@@ -1,0 +1,153 @@
+---
+title: "LRP Archival 2021"
+author: "Lulu R. Peach"
+date: "8/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(caret)
+library(glmnet)
+library(knitr)
+library(tidyverse)
+library(lme4)
+library(lmerTest)
+```
+```{r}
+# NOTE: Original R scripts for LASSO produced by Seth Adarkwah Yiadom, PhD. PLEASE contact lulu.peach@wsu.edu with any questions about script function.  
+```
+~~~LASSO COVARIATE SELECTION~~~
+```{r}
+# load the dataset on which you are performing the LASSO analysis (the example used here is titled "RC_V2_csv.csv")
+
+RC1 <- read_csv("~/Spring 2021/Consulting_Lulu/Updated data/RC_V2_csv.csv")
+RC <- RC1 %>% select(-1)
+```
+```{r}
+set.seed(15) 
+Coef.table <- NULL
+trials = 1000
+for(j in 1:trials){
+  index <- sample(1:nrow(RC), nrow(RC), replace=TRUE) 
+  Boot.temp <- RC %>% slice(index) 
+  design.train <- model.matrix(Rc_avg~., data = Boot.temp)[,-1]
+  lasso.model = cv.glmnet(design.train, Boot.temp$Rc_avg, alpha=1)
+### Save the coefficients
+  coef.value <- coef(lasso.model, s = "lambda.min") %>%
+    as.matrix() %>% 
+    as.numeric(.[,1])
+  ifelse(is.null(Coef.table),
+  Coef.table <- t(as.data.frame(coef.value)),
+  Coef.table <- merge(Coef.table, 
+                      t(as.data.frame(coef.value )), all=TRUE))
+}
+
+
+colm.names <- rownames(coef(lasso.model, s = "lambda.min") %>% as.matrix() )
+colnames(Coef.table)<- colm.names 
+```
+```{r}
+#percentage of times that each predictor was included in the model
+ext_coef <- Coef.table %>% select(1:80)
+ext_coef[is.na(ext_coef)]=0
+coef.mod <- ifelse(ext_coef ==0,0,1) %>%
+  apply(., 2, mean)*100
+kable(coef.mod)
+```
+```{r}
+#Variable selection from the RC data based on the three thresholds. 
+
+#20% threshold
+RC_var_20 <- RC1%>% select(Rc_avg,Pop_Ind, site_num, Pop_code, elev_cat,DBH,
+                           WPBR,new_cones, DF_near, aspect, BLDFIE_sl1,
+                           ORCDRC_sl1, ORCDRC_sl6)
+
+#10% threshold
+RC_var_10 <- RC1 %>% select(Rc_avg, Pop_Ind, site_num, Pop_code, elev_cat,lat,
+                            Ribes_pres, WP_regen, DBH, WPBR, new_cones,
+                            DF_near, aspect, BLDFIE_sl1, BLDFIE_sl6,
+                            CECSOL_sl1, CECSOL_sl6, ORCDRC_sl1, ORCDRC_sl6)
+
+#5% threshold
+RC_var_5 <- RC1 %>% select(Rc_avg, Pop_Ind, site_num, Pop_code, elev_cat, 
+                           lat, long,ele, SWWP, Ribes_pres, WP_regen,DBH, WPBR,
+                           new_cones, DF_near, aspect, BLDFIE_sl1,BLDFIE_sl6,
+                           CECSOL_sl1,CECSOL_sl6, ORCDRC_sl1, ORCDRC_sl6,
+                           PHIHOX_sl1)
+```
+```{r}
+RC_mod_20 <- lmerTest::lmer(Rc_avg ~ (1|site_num)+(1|Pop_code)+
+                              DBH+WPBR+aspect+BLDFIE_sl1+
+                              ORCDRC_sl6, data = RC_var_20)
+
+summary(RC_mod_20)
+#plot(RC_mod_20)
+#qqnorm(resid(RC_mod_20))
+#qqline(resid(RC_mod_20))
+Rcor(RC_var_20)
+
+RC_var_20%>% select(-2,-3)%>% GGally::ggpairs()
+
+RC_mod_10 <- lmerTest::lmer(Rc_avg ~(1|site_num)+(1|Pop_code)+
+                              WP_regen+DBH+WPBR+aspect+BLDFIE_sl1+
+                              BLDFIE_sl6+CECSOL_sl1+CECSOL_sl6+
+                              ORCDRC_sl1+ORCDRC_sl6,
+                              data = RC_var_10)
+
+summary(RC_mod_10)$coef
+#plot(RC_mod_20)
+#qqnorm(resid(RC_mod_20))
+#qqline(resid(RC_mod_20))
+
+
+RC_mod_5 <- lmerTest::lmer(Rc_avg ~ (1|site_num)+ (1|Pop_code)+ 
+                           lat+long+SWWP+Ribes_pres+WP_regen+DBH+
+                           WPBR+aspect+BLDFIE_sl1+BLDFIE_sl6+
+                           CECSOL_sl1+CECSOL_sl6+ORCDRC_sl1+
+                           ORCDRC_sl6+PHIHOX_sl1, data = RC_var_5)
+
+summary(RC_mod_5)$coef
+```
+~~~FINAL MULTIVARIATE MODELS~~~ 
+```{r}
+# ALL final multivariate models produced for LRP M.S. thesis documented here. LASSO procedures performed on other datasets will produce different results. See LRP_Covariate_List for full data used to produce models. 
+```
+```{r}
+#load LRP_Covariate_List after downloading as a text file 
+LRP_data <- fread("LRP_Covariate_List.txt", data.table= FALSE
+)
+#build final multivariate models with a single random effect 
+RS <- lme(data = LRP_data, Rt_avg~(1|Pop_code))
+RC <- lme(data = LRP_data, Rc_avg~(1|Pop_code) + SWWP + aspect + WPBR + DBH + BLDFIEsl1 + BLDFIEsl6)
+RT <- lme(data = LRP_data, Rs_avg~(1|Pop_code) + DBH + WPBR + aspect + RH_sp + BLDFIEsl1 + BLDFIEsl6)
+```
+
+```
+

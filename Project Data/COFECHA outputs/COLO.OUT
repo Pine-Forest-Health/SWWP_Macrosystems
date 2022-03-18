@@ -1,0 +1,349 @@
+[]  Dendrochronology Program Library                                        Run COLO   Program COF  10:48  Mon 03 Aug 2020  Page   1
+[]
+[]  P R O G R A M      C O F E C H A                                                                          Version 6.06P    31263
+------------------------------------------------------------------------------------------------------------------------------------
+
+ QUALITY CONTROL AND DATING CHECK OF TREE-RING MEASUREMENTS                                                   COF12K.for
+
+ File of DATED series:   COLO_A_updated_trimmed.txt
+
+ CONTENTS:
+
+    Part 1:  Title page, options selected, summary, absent rings by series
+    Part 2:  Histogram of time spans
+    Part 3:  Master series with sample depth and absent rings by year
+    Part 4:  Bar plot of Master Dating Series
+    Part 5:  Correlation by segment of each series with Master
+    Part 6:  Potential problems: low correlation, divergent year-to-year changes, absent rings, outliers
+    Part 7:  Descriptive statistics
+
+ RUN CONTROL OPTIONS SELECTED                             VALUE
+
+         1  Cubic smoothing spline 50% wavelength cutoff for filtering
+                                                            32 years
+         2  Segments examined are                           50 years lagged successively by  25 years
+         3  Autoregressive model applied                     A  Residuals are used in master dating series and testing
+         4  Series not transformed to logarithms             N
+         5  CORRELATION is Pearson (parametric, quantitative)
+            Critical correlation, 99% confidence level  0.3281
+         6  Master dating series saved                       N
+         7  Ring measurements listed                         N
+         8  Parts printed                              1234567 
+         9  Absent rings are omitted from master series and segment correlations  (Y)
+
+ Time span of Master dating series is  1936 to  2015    80 years
+ Continuous time span is               1936 to  2015    80 years
+ Portion with two or more series is    1937 to  2015    79 years
+
+
+                                        ****************************************
+                                        *C* Number of dated series        11 *C*
+                                        *O* Master series 1936 2015   80 yrs *O*
+                                        *F* Total rings in all series    665 *F*
+                                        *E* Total dated rings checked    664 *E*
+                                        *C* Series intercorrelation    0.526 *C*
+                                        *H* Average mean sensitivity   0.318 *H*
+                                        *A* Segments, possible problems    3 *A*
+                                        *** Mean length of series       60.0 ***
+                                        ****************************************
+
+ ABSENT RINGS listed by SERIES:            (See Master Dating Series for absent rings listed by year)
+
+               No ring measurements of zero value
+PART 2:  TIME PLOT OF TREE-RING SERIES:                                                            10:48  Mon 03 Aug 2020  Page   2
+------------------------------------------------------------------------------------------------------------------------------------
+ 1050 1100 1150 1200 1250 1300 1350 1400 1450 1500 1550 1600 1650 1700 1750 1800 1850 1900 1950 2000 2050 Ident   Seq Time-span  Yrs
+   :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    : -------- --- ---- ---- ----
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    <=====>   . COLO1H5S   1 1956 2015   60
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .   <======>   . COLO1H7S   2 1945 2015   71
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .  <=======>   . COLO1H9U   3 1936 2015   80
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .  <=======>   . COLO1L1S   4 1937 2015   79
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .<====>   . COLO1L5U   5 1969 2015   47
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .   <======>   . COLO1L5S   6 1948 2015   68
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    . <===>   . OLO1L3Ue   7 1973 2015   43
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .  <=======>   . OLO1L9Se   8 1938 2015   78
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    <=====>   . COLO1H5U   9 1952 2015   64
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .<====>   . COLO1H7U  10 1965 2015   51
+   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .   <=>   . COLO1H3U  11 1992 2015   24
+   :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :    :
+ 1050 1100 1150 1200 1250 1300 1350 1400 1450 1500 1550 1600 1650 1700 1750 1800 1850 1900 1950 2000 2050
+PART 3:  Master Dating Series:                                                                     10:48  Mon 03 Aug 2020  Page   3
+------------------------------------------------------------------------------------------------------------------------------------
+  Year  Value  No Ab    Year  Value  No Ab    Year  Value  No Ab    Year  Value  No Ab    Year  Value  No Ab    Year  Value  No Ab
+  ------------------    ------------------    ------------------    ------------------    ------------------    ------------------
+                        1950  2.505   5       2000  0.437  11
+                        1951 -0.628   5       2001 -0.210  11
+                        1952 -0.027   6       2002 -0.435  11
+                        1953  0.407   6       2003 -0.549  11
+                        1954 -0.663   6       2004 -0.287  11
+                        1955 -0.684   6       2005 -0.510  11
+                        1956 -0.041   7       2006 -1.346  11
+                        1957 -0.348   7       2007  1.477  11
+                        1958 -0.560   7       2008  1.738  11
+                        1959 -0.136   7       2009  0.138  11
+
+                        1960 -1.708   7       2010 -0.651  11
+                        1961 -0.002   7       2011  0.252  11
+                        1962 -0.176   7       2012 -0.670  11
+                        1963  0.662   7       2013 -1.356  11
+                        1964 -1.012   7       2014 -0.567  11
+                        1965 -1.132   8       2015  1.909  11
+                        1966  1.259   8
+                        1967  0.994   8
+                        1968 -0.235   8
+                        1969 -0.113   9
+
+                        1970  1.053   9
+                        1971  0.790   9
+                        1972  0.803   9
+                        1973  0.166  10
+                        1974  0.243  10
+                        1975 -0.482  10
+                        1976  1.009  10
+                        1977 -0.821  10
+                        1978 -2.234  10
+                        1979 -1.067  10
+
+                        1980 -0.801  10
+                        1981 -0.755  10
+                        1982 -0.645  10
+                        1983  0.205  10
+                        1984  1.307  10
+                        1985 -0.369  10
+  1936  1.178   1       1986  0.387  10
+  1937 -0.974   2       1987  1.555  10
+  1938  0.975   3       1988  0.755  10
+  1939  0.049   3       1989  0.900  10
+
+  1940 -2.182   3       1990 -0.948  10
+  1941 -1.428   3       1991  0.603  10
+  1942  0.825   3       1992  0.110  11
+  1943  0.469   3       1993  0.927  11
+  1944  1.053   3       1994  0.810  11
+  1945  0.709   4       1995  0.377  11
+  1946 -0.083   4       1996  0.297  11
+  1947 -1.482   4       1997 -2.954  11
+  1948  0.359   5       1998 -0.043  11
+  1949  1.963   5       1999 -0.339  11
+------------------------------------------------------------------------------------------------------------------------------------
+PART 4:  Master Bar Plot:                                                                          10:48  Mon 03 Aug 2020  Page   4
+------------------------------------------------------------------------------------------------------------------------------------
+   Year Rel value  Year Rel value  Year Rel value  Year Rel value  Year Rel value  Year Rel value  Year Rel value  Year Rel value
+                   1950----------J 2000-------B
+                   1951--c         2001----a
+                   1952-----@      2002---b
+                   1953-------B    2003---b
+                   1954--c         2004----a
+                   1955--c         2005---b
+                   1956-----@      2006e
+                   1957----a       2007----------F
+                   1958---b        2008----------G
+                   1959----a       2009------A
+                   1960g           2010--c
+                   1961-----@      2011------A
+                   1962----a       2012--c
+                   1963--------C   2013e
+                   1964-d          2014---b
+                   1965-e          2015----------H
+                   1966---------E
+                   1967---------D
+                   1968----a
+                   1969-----@
+                   1970---------D
+                   1971--------C
+                   1972--------C
+                   1973------A
+                   1974------A
+                   1975---b
+                   1976---------D
+                   1977-c
+                   1978i
+                   1979-d
+                   1980--c
+                   1981--c
+                   1982--c
+                   1983------A
+                   1984---------E
+                   1985---a
+   1936---------E  1986-------B
+   1937-d          1987----------F
+   1938---------D  1988--------C
+   1939-----@      1989--------D
+   1940i           1990-d
+   1941f           1991-------B
+   1942--------C   1992------@
+   1943-------B    1993--------D
+   1944---------D  1994--------C
+   1945--------C   1995-------B
+   1946-----@      1996------A
+   1947f           1997l
+   1948-------A    1998-----@
+   1949----------H 1999----a
+PART 5:  CORRELATION OF SERIES BY SEGMENTS:                                                        10:48  Mon 03 Aug 2020  Page   5
+------------------------------------------------------------------------------------------------------------------------------------
+ Correlations of  50-year dated segments, lagged  25 years
+ Flags:  A = correlation under  0.3281 but highest as dated;  B = correlation higher at other than dated position
+
+ Seq Series  Time_span   1925 1950 1975
+                         1974 1999 2024
+ --- -------- ---------  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+   1 COLO1H5S 1956 2015        .47  .60
+   2 COLO1H7S 1945 2015   .59  .63  .71
+   3 COLO1H9U 1936 2015   .55  .63  .64
+   4 COLO1L1S 1937 2015   .69  .84  .81
+   5 COLO1L5U 1969 2015        .22A
+   6 COLO1L5S 1948 2015   .41  .38  .44
+   7 OLO1L3Ue 1973 2015        .74
+   8 OLO1L9Se 1938 2015   .62  .59  .68
+   9 COLO1H5U 1952 2015        .40  .68
+  10 COLO1H7U 1965 2015        .04B .02B
+  11 COLO1H3U 1992 2015             .61
+ Av segment correlation  0.57 0.49 0.58
+PART 6:  POTENTIAL PROBLEMS:                                                                       10:48  Mon 03 Aug 2020  Page   5
+------------------------------------------------------------------------------------------------------------------------------------
+
+ For each series with potential problems the following diagnostics may appear:
+
+ [A] Correlations with master dating series of flagged  50-year segments of series filtered with  32-year spline,
+     at every point from ten years earlier (-10) to ten years later (+10) than dated
+
+ [B] Effect of those data values which most lower or raise correlation with master series
+     Symbol following year indicates value in series is greater (>) or lesser (<) than master series value
+
+ [C] Year-to-year changes very different from the mean change in other series
+
+ [D] Absent rings (zero values)
+
+ [E] Values which are statistical outliers from mean for the year
+====================================================================================================================================
+
+ COLO1H5S  1956 to  2015      60 years                                                                                    Series   1
+
+ [B] Entire series, effect on correlation ( 0.553) is:
+       Lower   1973>-0.031   1966<-0.027   1994<-0.018   1963<-0.017   1968>-0.016   1985>-0.015  Higher   1997 0.064   2015 0.031
+
+====================================================================================================================================
+
+ COLO1H7S  1945 to  2015      71 years                                                                                    Series   2
+
+ [B] Entire series, effect on correlation ( 0.664) is:
+       Lower   1961>-0.030   1963<-0.020   1971<-0.016   1991<-0.014   1956<-0.012   1992<-0.011  Higher   1997 0.045   1978 0.026
+
+ [E] Outliers     1   3.0 SD above or -4.5 SD below mean for year
+       1961 +3.3 SD
+====================================================================================================================================
+
+ COLO1H9U  1936 to  2015      80 years                                                                                    Series   3
+
+ [*] Early part of series cannot be checked from 1936 to 1936 -- not matched by another series
+
+ [B] Entire series, effect on correlation ( 0.602) is:
+       Lower   2003>-0.030   1958>-0.029   1947>-0.020   1974>-0.013   1967<-0.013   1943<-0.010  Higher   1997 0.034   2015 0.023
+
+====================================================================================================================================
+
+ COLO1L1S  1937 to  2015      79 years                                                                                    Series   4
+
+ [B] Entire series, effect on correlation ( 0.722) is:
+       Lower   1944<-0.027   1961>-0.019   2007<-0.016   2014>-0.015   1963<-0.010   1938>-0.009  Higher   1997 0.036   1978 0.015
+
+====================================================================================================================================
+
+ COLO1L5U  1969 to  2015      47 years                                                                                    Series   5
+
+ [A] Segment   High   -10   -9   -8   -7   -6   -5   -4   -3   -2   -1    0   +1   +2   +3   +4   +5   +6   +7   +8   +9  +10
+    ---------  ----   ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+    1969 2015    0   -.15 -.41  .19 -.12  .04 -.14  .05  .09 -.46  .21  .22*   -    -    -    -    -    -    -    -    -    -
+
+ [B] Entire series, effect on correlation ( 0.224) is:
+       Lower   1999>-0.056   1994<-0.030   1990>-0.030   1976<-0.024   2006>-0.024   1986<-0.024  Higher   2015 0.070   1987 0.054
+     1969 to 2015 segment:
+       Lower   1999>-0.056   1994<-0.030   1990>-0.030   1976<-0.024   2006>-0.024   1986<-0.024  Higher   2015 0.070   1987 0.054
+
+ [E] Outliers     1   3.0 SD above or -4.5 SD below mean for year
+       1999 +3.2 SD
+====================================================================================================================================
+
+ COLO1L5S  1948 to  2015      68 years                                                                                    Series   6
+
+ [B] Entire series, effect on correlation ( 0.408) is:
+       Lower   2003>-0.037   1968>-0.028   1952>-0.023   1961<-0.022   1985<-0.020   1990>-0.017  Higher   1997 0.034   1978 0.034
+
+ [E] Outliers     1   3.0 SD above or -4.5 SD below mean for year
+       2003 +3.4 SD
+====================================================================================================================================
+
+ OLO1L3Ue  1973 to  2015      43 years                                                                                    Series   7
+
+ [B] Entire series, effect on correlation ( 0.742) is:
+       Lower   1982>-0.022   2006>-0.018   1974>-0.015   2011<-0.012   2008<-0.010   2004<-0.010  Higher   1997 0.047   1978 0.031
+
+====================================================================================================================================
+
+ OLO1L9Se  1938 to  2015      78 years                                                                                    Series   8
+
+ [B] Entire series, effect on correlation ( 0.631) is:
+       Lower   1953>-0.028   1938<-0.026   1959<-0.017   1996>-0.015   1991<-0.015   1964>-0.013  Higher   1997 0.040   1978 0.024
+
+====================================================================================================================================
+
+ COLO1H5U  1952 to  2015      64 years                                                                                    Series   9
+
+ [B] Entire series, effect on correlation ( 0.473) is:
+       Lower   1963>-0.156   1996<-0.027   1970<-0.016   1953<-0.015   1952>-0.010   1984<-0.009  Higher   2015 0.038   1978 0.030
+
+ [C] Year-to-year changes diverging by over 4.0 std deviations:
+       1962 1963   4.4 SD
+
+ [E] Outliers     1   3.0 SD above or -4.5 SD below mean for year
+       1963 +6.9 SD
+====================================================================================================================================
+
+ COLO1H7U  1965 to  2015      51 years                                                                                    Series  10
+
+ [A] Segment   High   -10   -9   -8   -7   -6   -5   -4   -3   -2   -1    0   +1   +2   +3   +4   +5   +6   +7   +8   +9  +10
+    ---------  ----   ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+    1965 2014   -8    .00  .14  .29*-.13  .04  .10  .15  .02 -.12  .04  .04|-.09    -    -    -    -    -    -    -    -    -
+    1966 2015   -8    .01  .16  .25*-.15  .05  .12  .14  .04 -.11  .05  .02|   -    -    -    -    -    -    -    -    -    -
+
+ [B] Entire series, effect on correlation ( 0.010) is:
+       Lower   1978>-0.068   1975>-0.041   1970<-0.039   2015<-0.035   1993<-0.029   1980>-0.019  Higher   1997 0.071   2008 0.036
+     1965 to 2014 segment:
+       Lower   1978>-0.073   1970<-0.045   1975>-0.043   1993<-0.033   1980>-0.019   2010>-0.018  Higher   1997 0.071   2008 0.038
+     1966 to 2015 segment:
+       Lower   1978>-0.071   1975>-0.043   1970<-0.039   2015<-0.035   1993<-0.029   1980>-0.020  Higher   1997 0.071   2008 0.036
+
+ [E] Outliers     2   3.0 SD above or -4.5 SD below mean for year
+       1975 +3.8 SD;    1978 +3.8 SD
+====================================================================================================================================
+
+ COLO1H3U  1992 to  2015      24 years                                                                                    Series  11
+
+ [B] Entire series, effect on correlation ( 0.607) is:
+       Lower   2000>-0.071   2011>-0.034   1998<-0.026   2004<-0.022   2007<-0.013   2008<-0.011  Higher   1997 0.118   2015 0.048
+
+ [E] Outliers     1   3.0 SD above or -4.5 SD below mean for year
+       2000 +3.0 SD
+====================================================================================================================================
+PART 7:  DESCRIPTIVE STATISTICS:                                                                   10:48  Mon 03 Aug 2020  Page   6
+------------------------------------------------------------------------------------------------------------------------------------
+
+                                                Corr   //-------- Unfiltered --------\\  //---- Filtered -----\\
+                           No.    No.    No.    with   Mean   Max     Std   Auto   Mean   Max     Std   Auto  AR
+ Seq Series   Interval   Years  Segmt  Flags   Master  msmt   msmt    dev   corr   sens  value    dev   corr  ()
+ --- -------- ---------  -----  -----  -----   ------ -----  -----  -----  -----  -----  -----  -----  -----  --
+   1 COLO1H5S 1956 2015     60      2      0   0.553   2.00   3.98  0.750  0.493  0.307   0.73  0.367  0.018   1
+   2 COLO1H7S 1945 2015     71      3      0   0.664   1.80   3.76  0.749  0.474  0.352   0.97  0.395  0.015   1
+   3 COLO1H9U 1936 2015     80      3      0   0.602   1.15   2.57  0.569  0.640  0.359   0.91  0.392  0.006   1
+   4 COLO1L1S 1937 2015     79      3      0   0.722   1.43   2.89  0.631  0.639  0.307   0.70  0.334  0.011   1
+   5 COLO1L5U 1969 2015     47      1      1   0.224   3.74   8.32  1.912  0.747  0.287   1.02  0.360 -0.026   1
+   6 COLO1L5S 1948 2015     68      3      0   0.408   3.26   6.68  1.434  0.710  0.283   0.83  0.340  0.018   1
+   7 OLO1L3Ue 1973 2015     43      1      0   0.742   2.35   4.13  0.685  0.249  0.291   1.00  0.355  0.000   1
+   8 OLO1L9Se 1938 2015     78      3      0   0.631   1.90   3.86  0.767  0.491  0.325   1.01  0.408  0.011   1
+   9 COLO1H5U 1952 2015     64      2      0   0.473   1.53   4.69  0.762  0.329  0.340   2.74  0.562  0.013   1
+  10 COLO1H7U 1965 2015     51      2      2   0.010   1.93   3.21  0.622  0.066  0.332   0.69  0.331  0.002   2
+  11 COLO1H3U 1992 2015     24      1      0   0.607   1.44   2.25  0.422  0.412  0.253   0.70  0.303  0.010   1
+ --- -------- ---------  -----  -----  -----   ------ -----  -----  -----  -----  -----  -----  -----  -----  --
+ Total or mean:            665     24      3   0.526   2.00   8.32  0.843  0.499  0.318   2.74  0.383  0.008
+
+                                              - = [  COFECHA COLO COF  ] = -
