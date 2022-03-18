@@ -2,8 +2,21 @@
 *Collaborative research: Blending ecology and evolution using emerging technologies to determine species
 distributions with a non-native pathogen in a changing climate?*
 
+National Science Foundation, Grant/Award Numbers: EF-1442486, EF-1442597
+
 Data and Metadata for NSF SWWP Macrosystems Collaborative Project
-Project metadata follows the EDI metadata template https://environmentaldatainitiative.org/webinars-events/previous-edi-events/explanation-of-the-edi-metadata-template/
+Project metadata follows the EDI metadata template unless otherwise noted https://environmentaldatainitiative.org/webinars-events/previous-edi-events/explanation-of-the-edi-metadata-template/
+
+Project Data folder contains subdirectories to project components:
+  1. Blister Rust Garden Phenotypes
+  2. Climate Data
+  3. Dendrophenotypes
+  4. Genomic SNPs
+  5. Maternal Tree Database
+  6. Southwestern Experimental Garden Array Phenotypes
+  7. Spatial and Landscape Data.
+
+Data and metadata are being updated as project components are completed.
 
 ## Project overview:
 An interdisciplinary, collaborative team led by Northern Arizona University and including Oregon State and 
