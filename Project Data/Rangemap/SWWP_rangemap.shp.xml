@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20180508</CreaDate><CreaTime>11474300</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Conversion Tools.tbx\RasterToPolygon" Date="20180508" Time="114743">RasterToPolygon SWWP_RangeMap.tif U:\Projects\USFS\ForestClimate\SWWP\SDM\Data\Cadastre\SWWP_rangemap.shp NO_SIMPLIFY Value SINGLE_OUTER_PART #</Process></lineage></DataProperties></Esri></metadata>
