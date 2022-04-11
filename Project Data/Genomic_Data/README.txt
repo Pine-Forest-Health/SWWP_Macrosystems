@@ -21,7 +21,6 @@ This process retained 49859 SNPs that is provided in this directory.
 #######################
 ****File details********
 #########################
-
 minor012.txt
 This file contains SNP data (coded 012) along with population, individual tree ID, mean lat-long for each population and the group the individual was classified into. 
 Groups are: LP, MX, US, 113, 114 & unk. Unknown includes LPI (which may actually be LSI).
