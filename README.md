@@ -9,12 +9,12 @@ Project metadata follows the EDI metadata template unless otherwise noted https:
 
 Project Data folder contains subdirectories to project components:
   1. Blister Rust Garden Phenotypes
-  2. Climate Data
-  3. Dendrophenotypes
-  4. Genomic SNPs
-  5. Maternal Tree Database
-  6. Southwestern Experimental Garden Array Phenotypes
-  7. Spatial and Landscape Data.
+  2. Dendrophenotypes
+  3. Genomic SNPs
+  4. Maternal Tree Database
+  5. Southwestern Experimental Garden Array Phenotypes
+  6. Spatial and Landscape Data.
+ 
 
 Data and metadata are being updated as project components are completed.
 
