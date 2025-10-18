@@ -5,7 +5,7 @@ distributions with a non-native pathogen in a changing climate?*
 National Science Foundation, Grant/Award Numbers: EF-1442486, EF-1442597
 
 Data and Metadata for NSF SWWP Macrosystems Collaborative Project
-Project metadata follows the EDI metadata template unless otherwise noted https://environmentaldatainitiative.org/webinars-events/previous-edi-events/explanation-of-the-edi-metadata-template/
+Project metadata follows the EDI metadata template unless otherwise noted https://eml.ecoinformatics.org/
 
 Project Data folder contains subdirectories to project components:
   1. Blister Rust Garden Phenotypes
